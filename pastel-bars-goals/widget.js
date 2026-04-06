@@ -3,47 +3,6 @@ let currencySymbol = '$';
 let customCounterValue = 0;
 var lastSessionData = {};
 
-var ICON_HTML = {
-  dollar: '<span class="goal-icon-char" aria-hidden="true">$</span>',
-  bill:
-    '<svg class="goal-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm8 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>',
-  diamond:
-    '<svg class="goal-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 L21 12 L12 21 L3 12 Z" fill="currentColor"/></svg>',
-  star:
-    '<svg class="goal-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L14.5 9 L22 9 L16 13.5 L18.5 21 L12 16.5 L5.5 21 L8 13.5 L2 9 L9.5 9 Z" fill="currentColor"/></svg>',
-  heart_svg:
-    '<svg class="goal-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 C10 18 4 13 4 9 C4 6 6 4 9 4 C11 4 12 5 12 5 C12 5 13 4 15 4 C18 4 20 6 20 9 C20 13 14 18 12 21 Z" fill="currentColor"/></svg>',
-  heart_emoji: '<span class="goal-icon-emoji" aria-hidden="true">💗</span>',
-  moon:
-    '<svg class="goal-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/></svg>',
-  sparkles: '<span class="goal-icon-emoji" aria-hidden="true">✨</span>',
-  fire: '<span class="goal-icon-emoji" aria-hidden="true">🔥</span>',
-  teardrop:
-    '<svg class="goal-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 C14 8 18 10 18 14 C18 18 15 21 12 22 C9 21 6 18 6 14 C6 10 10 8 12 2 Z" fill="currentColor"/></svg>',
-  trophy: '<span class="goal-icon-emoji" aria-hidden="true">🏆</span>',
-  none: '<span class="goal-icon-empty" aria-hidden="true">—</span>'
-};
-
-function renderIcons() {
-  if (!fieldData) return;
-  var pairs = [
-    ['donation', 'iconDonation'],
-    ['follower', 'iconFollower'],
-    ['sub', 'iconSub'],
-    ['bits', 'iconBits'],
-    ['custom', 'iconCustom']
-  ];
-  for (var i = 0; i < pairs.length; i++) {
-    var slot = document.querySelector('.js-icon-slot[data-icon-for="' + pairs[i][0] + '"]');
-    if (!slot) continue;
-    var key = fieldData[pairs[i][1]];
-    if (!key || typeof key !== 'string') key = 'star';
-    var html = ICON_HTML[key];
-    if (!html) html = ICON_HTML.star;
-    slot.innerHTML = html;
-  }
-}
-
 function persistSession(obj) {
   if (!obj || !obj.detail) return;
   var s = obj.detail.session;
@@ -253,7 +212,6 @@ window.addEventListener('onWidgetLoad', function (obj) {
   } else if (c && typeof c === 'string') {
     currencySymbol = c;
   }
-  renderIcons();
   persistSession(obj);
   refreshFromSession();
 });
