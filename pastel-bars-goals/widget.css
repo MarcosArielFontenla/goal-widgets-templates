@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.goal-widget {
+  width: 100%;
+  min-width: 260px;
+  max-width: 420px;
+  padding: 16px 18px;
+  font-family: '{{fontName}}', 'Nunito', system-ui, sans-serif;
+  background: {{bgColor}};
+  border-radius: 16px;
+  color: {{textColor}};
+}
+
+.goal-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.goal-row:last-child {
+  margin-bottom: 0;
+}
+
+.goal-row--hidden {
+  display: none !important;
+}
+
+.goal-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.goal-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.goal-icon-circle--donation {
+  background: {{colorDonationIconBg}};
+  color: {{colorDonationIcon}};
+}
+
+.goal-icon-circle--follower {
+  background: {{colorFollowerIconBg}};
+  color: {{colorFollowerIcon}};
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.goal-icon-circle--sub {
+  background: {{colorSubIconBg}};
+  color: {{colorSubIcon}};
+}
+
+.goal-icon-circle--bits {
+  background: {{colorBitsIconBg}};
+  color: {{colorBitsIcon}};
+}
+
+.goal-icon-circle--custom {
+  background: {{colorCustomIconBg}};
+  color: {{colorCustomIcon}};
+}
+
+.goal-icon-svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.goal-icon-char {
+  font-size: 1.55rem;
+  font-weight: 900;
+  line-height: 1;
+  font-family: inherit;
+  user-select: none;
+}
+
+.goal-icon-emoji {
+  font-size: 1.35rem;
+  line-height: 1;
+  display: block;
+  user-select: none;
+}
+
+.goal-icon-empty {
+  font-size: 1.1rem;
+  font-weight: 800;
+  opacity: 0.35;
+  line-height: 1;
+  user-select: none;
+}
+
+.goal-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.goal-label {
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px {{textShadow}};
+}
+
+.goal-stat {
+  font-weight: 800;
+  font-size: 13px;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px {{textShadow}};
+}
+
+.goal-track {
+  height: 22px;
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.goal-track--donation {
+  background: {{colorDonationTrack}};
+}
+
+.goal-track--follower {
+  background: {{colorFollowerTrack}};
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+.goal-track--sub {
+  background: {{colorSubTrack}};
+}
+
+.goal-track--bits {
+  background: {{colorBitsTrack}};
+}
+
+.goal-track--custom {
+  background: {{colorCustomTrack}};
+}
+
+.goal-fill {
+  height: 100%;
+  border-radius: 999px;
+  width: 0%;
+  transition: width 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+.goal-row--donation .goal-fill {
+  background: linear-gradient(90deg, {{colorDonationFill}}, {{colorDonationFillLight}});
+}
+
+.goal-row--follower .goal-fill {
+  background: linear-gradient(90deg, {{colorFollowerFill}}, {{colorFollowerFillLight}});
+}
+
+.goal-row--sub .goal-fill {
+  background: linear-gradient(90deg, {{colorSubFill}}, {{colorSubFillLight}});
+}
+
+.goal-row--bits .goal-fill {
+  background: linear-gradient(90deg, {{colorBitsFill}}, {{colorBitsFillLight}});
+}
+
+.goal-row--custom .goal-fill {
+  background: linear-gradient(90deg, {{colorCustomFill}}, {{colorCustomFillLight}});
+}

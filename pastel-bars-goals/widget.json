@@ -1,0 +1,438 @@
+{
+  "widgetName": {
+    "type": "hidden",
+    "value": "Metas · Barras pastel"
+  },
+  "widgetAuthor": {
+    "type": "hidden",
+    "value": "ImproveGoalWidget"
+  },
+  "tipGoalTarget": {
+    "type": "number",
+    "label": "Meta donaciones (Widget Data → Goals)",
+    "value": 100,
+    "min": 1,
+    "step": 1,
+    "group": "Metas"
+  },
+  "followerGoalTarget": {
+    "type": "number",
+    "label": "Meta seguidores",
+    "value": 100,
+    "min": 1,
+    "step": 1,
+    "group": "Metas"
+  },
+  "subGoalTarget": {
+    "type": "number",
+    "label": "Meta suscriptores",
+    "value": 200,
+    "min": 1,
+    "step": 1,
+    "group": "Metas"
+  },
+  "cheerGoalTarget": {
+    "type": "number",
+    "label": "Meta bits (cheers)",
+    "value": 1000,
+    "min": 1,
+    "step": 1,
+    "group": "Metas"
+  },
+  "customGoalTarget": {
+    "type": "number",
+    "label": "Meta fila personalizada (contador)",
+    "value": 100,
+    "min": 1,
+    "step": 1,
+    "group": "Metas"
+  },
+  "customCounterName": {
+    "type": "text",
+    "label": "Nombre del contador del bot (fila personalizada)",
+    "value": "",
+    "group": "Metas"
+  },
+  "showBitsRow": {
+    "type": "checkbox",
+    "label": "Mostrar fila de bits",
+    "value": true,
+    "group": "Metas"
+  },
+  "showCustomRow": {
+    "type": "checkbox",
+    "label": "Mostrar fila personalizada (requiere contador)",
+    "value": true,
+    "group": "Metas"
+  },
+  "timeframeDonation": {
+    "type": "dropdown",
+    "label": "Donaciones · periodo del valor",
+    "value": "manual",
+    "options": {
+      "total": "Total",
+      "month": "Mes",
+      "week": "Semana",
+      "session": "Sesión",
+      "manual": "Meta del panel (goal)"
+    },
+    "group": "Periodo (origen del valor)"
+  },
+  "timeframeFollower": {
+    "type": "dropdown",
+    "label": "Seguidores · periodo del valor",
+    "value": "manual",
+    "options": {
+      "total": "Total",
+      "month": "Mes",
+      "week": "Semana",
+      "session": "Sesión",
+      "manual": "Meta del panel (goal)"
+    },
+    "group": "Periodo (origen del valor)"
+  },
+  "timeframeSub": {
+    "type": "dropdown",
+    "label": "Subs · periodo del valor",
+    "value": "manual",
+    "options": {
+      "total": "Total",
+      "month": "Mes",
+      "week": "Semana",
+      "session": "Sesión",
+      "manual": "Meta del panel (goal)"
+    },
+    "group": "Periodo (origen del valor)"
+  },
+  "timeframeBits": {
+    "type": "dropdown",
+    "label": "Bits · periodo del valor",
+    "value": "manual",
+    "options": {
+      "total": "Total",
+      "month": "Mes",
+      "week": "Semana",
+      "session": "Sesión",
+      "manual": "Meta del panel (goal)"
+    },
+    "group": "Periodo (origen del valor)"
+  },
+  "iconDonation": {
+    "type": "dropdown",
+    "label": "Icono · Donaciones",
+    "value": "dollar",
+    "options": {
+      "dollar": "$ (dólar)",
+      "bill": "Billete",
+      "diamond": "Rombo",
+      "star": "Estrella",
+      "heart_svg": "Corazón (dibujo)",
+      "heart_emoji": "Corazón 💗",
+      "moon": "Luna",
+      "sparkles": "✨ Sparkles",
+      "fire": "🔥 Fuego",
+      "teardrop": "Gota",
+      "trophy": "🏆 Trofeo",
+      "none": "Sin icono"
+    },
+    "group": "Iconos"
+  },
+  "iconFollower": {
+    "type": "dropdown",
+    "label": "Icono · Seguidores",
+    "value": "heart_emoji",
+    "options": {
+      "dollar": "$ (dólar)",
+      "bill": "Billete",
+      "diamond": "Rombo",
+      "star": "Estrella",
+      "heart_svg": "Corazón (dibujo)",
+      "heart_emoji": "Corazón 💗",
+      "moon": "Luna",
+      "sparkles": "✨ Sparkles",
+      "fire": "🔥 Fuego",
+      "teardrop": "Gota",
+      "trophy": "🏆 Trofeo",
+      "none": "Sin icono"
+    },
+    "group": "Iconos"
+  },
+  "iconSub": {
+    "type": "dropdown",
+    "label": "Icono · Subs",
+    "value": "star",
+    "options": {
+      "dollar": "$ (dólar)",
+      "bill": "Billete",
+      "diamond": "Rombo",
+      "star": "Estrella",
+      "heart_svg": "Corazón (dibujo)",
+      "heart_emoji": "Corazón 💗",
+      "moon": "Luna",
+      "sparkles": "✨ Sparkles",
+      "fire": "🔥 Fuego",
+      "teardrop": "Gota",
+      "trophy": "🏆 Trofeo",
+      "none": "Sin icono"
+    },
+    "group": "Iconos"
+  },
+  "iconBits": {
+    "type": "dropdown",
+    "label": "Icono · Bits",
+    "value": "diamond",
+    "options": {
+      "dollar": "$ (dólar)",
+      "bill": "Billete",
+      "diamond": "Rombo",
+      "star": "Estrella",
+      "heart_svg": "Corazón (dibujo)",
+      "heart_emoji": "Corazón 💗",
+      "moon": "Luna",
+      "sparkles": "✨ Sparkles",
+      "fire": "🔥 Fuego",
+      "teardrop": "Gota",
+      "trophy": "🏆 Trofeo",
+      "none": "Sin icono"
+    },
+    "group": "Iconos"
+  },
+  "iconCustom": {
+    "type": "dropdown",
+    "label": "Icono · Personalizada",
+    "value": "heart_svg",
+    "options": {
+      "dollar": "$ (dólar)",
+      "bill": "Billete",
+      "diamond": "Rombo",
+      "star": "Estrella",
+      "heart_svg": "Corazón (dibujo)",
+      "heart_emoji": "Corazón 💗",
+      "moon": "Luna",
+      "sparkles": "✨ Sparkles",
+      "fire": "🔥 Fuego",
+      "teardrop": "Gota",
+      "trophy": "🏆 Trofeo",
+      "none": "Sin icono"
+    },
+    "group": "Iconos"
+  },
+  "labelDonation": {
+    "type": "text",
+    "label": "Título visible · Donaciones (ej. Meta donaciones)",
+    "value": "donation goal",
+    "group": "Textos"
+  },
+  "labelFollower": {
+    "type": "text",
+    "label": "Título visible · Seguidores",
+    "value": "follower goal",
+    "group": "Textos"
+  },
+  "labelSub": {
+    "type": "text",
+    "label": "Título visible · Subs",
+    "value": "sub goal",
+    "group": "Textos"
+  },
+  "labelBits": {
+    "type": "text",
+    "label": "Título visible · Bits",
+    "value": "bits goal",
+    "group": "Textos"
+  },
+  "labelCustom": {
+    "type": "text",
+    "label": "Título visible · Fila personalizada",
+    "value": "your text",
+    "group": "Textos"
+  },
+  "showPercentPrimary": {
+    "type": "checkbox",
+    "label": "Números: priorizar % (si no, muestra actual / meta)",
+    "value": false,
+    "group": "Textos"
+  },
+  "tipDecimals": {
+    "type": "slider",
+    "label": "Decimales en donaciones",
+    "value": 0,
+    "min": 0,
+    "max": 2,
+    "step": 1,
+    "group": "Textos"
+  },
+  "fontName": {
+    "type": "googleFont",
+    "label": "Fuente",
+    "value": "Nunito"
+  },
+  "bgColor": {
+    "type": "colorpicker",
+    "label": "Fondo del panel",
+    "value": "#121a2e",
+    "group": "Colores base"
+  },
+  "textColor": {
+    "type": "colorpicker",
+    "label": "Color del texto",
+    "value": "#ffffff",
+    "group": "Colores base"
+  },
+  "textShadow": {
+    "type": "colorpicker",
+    "label": "Sombra del texto",
+    "value": "rgba(0,0,0,0.45)",
+    "group": "Colores base"
+  },
+  "colorDonationIconBg": {
+    "type": "colorpicker",
+    "label": "Donación · círculo icono",
+    "value": "#f5a8c8",
+    "group": "Donación (rosa)"
+  },
+  "colorDonationIcon": {
+    "type": "colorpicker",
+    "label": "Donación · icono",
+    "value": "#ffd93d",
+    "group": "Donación (rosa)"
+  },
+  "colorDonationTrack": {
+    "type": "colorpicker",
+    "label": "Donación · pista vacía",
+    "value": "#b8708e",
+    "group": "Donación (rosa)"
+  },
+  "colorDonationFill": {
+    "type": "colorpicker",
+    "label": "Donación · relleno (inicio)",
+    "value": "#f5a0c8",
+    "group": "Donación (rosa)"
+  },
+  "colorDonationFillLight": {
+    "type": "colorpicker",
+    "label": "Donación · relleno (brillo)",
+    "value": "#ffd0e8",
+    "group": "Donación (rosa)"
+  },
+  "colorFollowerIconBg": {
+    "type": "colorpicker",
+    "label": "Seguidor · círculo icono",
+    "value": "#c4b5f5",
+    "group": "Seguidor (lavanda)"
+  },
+  "colorFollowerIcon": {
+    "type": "colorpicker",
+    "label": "Seguidor · icono",
+    "value": "#ffffff",
+    "group": "Seguidor (lavanda)"
+  },
+  "colorFollowerTrack": {
+    "type": "colorpicker",
+    "label": "Seguidor · pista vacía",
+    "value": "#8f7ec4",
+    "group": "Seguidor (lavanda)"
+  },
+  "colorFollowerFill": {
+    "type": "colorpicker",
+    "label": "Seguidor · relleno (inicio)",
+    "value": "#c4b5f5",
+    "group": "Seguidor (lavanda)"
+  },
+  "colorFollowerFillLight": {
+    "type": "colorpicker",
+    "label": "Seguidor · relleno (brillo)",
+    "value": "#e8e0ff",
+    "group": "Seguidor (lavanda)"
+  },
+  "colorSubIconBg": {
+    "type": "colorpicker",
+    "label": "Sub · círculo icono",
+    "value": "#f5e6a0",
+    "group": "Sub (amarillo)"
+  },
+  "colorSubIcon": {
+    "type": "colorpicker",
+    "label": "Sub · icono",
+    "value": "#7ec8ff",
+    "group": "Sub (amarillo)"
+  },
+  "colorSubTrack": {
+    "type": "colorpicker",
+    "label": "Sub · pista vacía",
+    "value": "#c9b870",
+    "group": "Sub (amarillo)"
+  },
+  "colorSubFill": {
+    "type": "colorpicker",
+    "label": "Sub · relleno (inicio)",
+    "value": "#f5e6a0",
+    "group": "Sub (amarillo)"
+  },
+  "colorSubFillLight": {
+    "type": "colorpicker",
+    "label": "Sub · relleno (brillo)",
+    "value": "#fff8d4",
+    "group": "Sub (amarillo)"
+  },
+  "colorBitsIconBg": {
+    "type": "colorpicker",
+    "label": "Bits · círculo icono",
+    "value": "#a0e8f5",
+    "group": "Bits (cian)"
+  },
+  "colorBitsIcon": {
+    "type": "colorpicker",
+    "label": "Bits · icono",
+    "value": "#1e4a8a",
+    "group": "Bits (cian)"
+  },
+  "colorBitsTrack": {
+    "type": "colorpicker",
+    "label": "Bits · pista vacía",
+    "value": "#5eb8c8",
+    "group": "Bits (cian)"
+  },
+  "colorBitsFill": {
+    "type": "colorpicker",
+    "label": "Bits · relleno (inicio)",
+    "value": "#a0e8f5",
+    "group": "Bits (cian)"
+  },
+  "colorBitsFillLight": {
+    "type": "colorpicker",
+    "label": "Bits · relleno (brillo)",
+    "value": "#d4f7ff",
+    "group": "Bits (cian)"
+  },
+  "colorCustomIconBg": {
+    "type": "colorpicker",
+    "label": "Personal · círculo icono",
+    "value": "#ffffff",
+    "group": "Personal (menta)"
+  },
+  "colorCustomIcon": {
+    "type": "colorpicker",
+    "label": "Personal · icono",
+    "value": "#ff7eb3",
+    "group": "Personal (menta)"
+  },
+  "colorCustomTrack": {
+    "type": "colorpicker",
+    "label": "Personal · pista vacía",
+    "value": "#7bc49a",
+    "group": "Personal (menta)"
+  },
+  "colorCustomFill": {
+    "type": "colorpicker",
+    "label": "Personal · relleno (inicio)",
+    "value": "#a8e8c8",
+    "group": "Personal (menta)"
+  },
+  "colorCustomFillLight": {
+    "type": "colorpicker",
+    "label": "Personal · relleno (brillo)",
+    "value": "#d4f5e4",
+    "group": "Personal (menta)"
+  }
+}
