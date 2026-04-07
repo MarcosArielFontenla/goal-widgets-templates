@@ -3,6 +3,111 @@ let currencySymbol = '$';
 let customCounterValue = 0;
 var lastSessionData = {};
 
+var ICON_PRESET_EMOJI = {
+  money_bag: '💰',
+  dollar_banknote: '💵',
+  dollar_sign: '💲',
+  credit_card: '💳',
+  money_wings: '💸',
+  coin: '🪙',
+  gem: '💎',
+  ring: '💍',
+  wrapped_gift: '🎁',
+  ribbon: '🎀',
+  trophy: '🏆',
+  medal_gold: '🥇',
+  medal_silver: '🥈',
+  medal_bronze: '🥉',
+  star: '⭐',
+  star_glow: '🌟',
+  sparkles: '✨',
+  fire: '🔥',
+  heart_red: '❤',
+  heart_purple: '💜',
+  heart_blue: '💙',
+  heart_green: '💚',
+  heart_yellow: '💛',
+  heart_orange: '🧡',
+  heart_pink: '💗',
+  heart_sparkling: '💖',
+  heart_white: '🤍',
+  heart_black: '🖤',
+  crown: '👑',
+  rocket: '🚀',
+  target: '🎯',
+  gamepad: '🎮',
+  clapper: '🎬',
+  party: '🎉',
+  balloon: '🎈',
+  confetti: '🎊',
+  lightning: '⚡',
+  hundred: '💯',
+  moon: '🌙',
+  sun: '☀️',
+  rainbow: '🌈',
+  mic: '🎤',
+  dice: '🎲',
+  thumbs_up: '👍',
+  eyes: '👀',
+  skull: '💀',
+  ghost: '👻',
+  robot: '🤖',
+  cat: '🐱',
+  dog: '🐶',
+  fox: '🦊',
+  unicorn: '🦄',
+  butterfly: '🦋',
+  palm_tree: '🌴',
+  coffee: '☕',
+  pizza: '🍕',
+  cake: '🎂',
+  beer: '🍺',
+  headphones: '🎧',
+  musical_note: '🎵',
+  four_leaf: '🍀',
+  wave: '👋',
+  muscle: '💪',
+  pray: '🙏',
+  chart_up: '📈',
+  bulb: '💡',
+  ticket: '🎫',
+  package: '📦',
+  phone: '📱',
+  computer: '💻',
+  star_struck: '🤩',
+  check_mark: '✅'
+};
+
+var ICON_FIELD_BY_ROW = {
+  donation: 'iconChoiceDonation',
+  follower: 'iconChoiceFollower',
+  sub: 'iconChoiceSub',
+  bits: 'iconChoiceBits',
+  custom: 'iconChoiceCustom'
+};
+
+var ICON_DEFAULT_BY_ROW = {
+  donation: 'money_bag',
+  follower: 'heart_purple',
+  sub: 'wrapped_gift',
+  bits: 'gem',
+  custom: 'heart_red'
+};
+
+function applyIconChoices() {
+  if (!fieldData) return;
+  Object.keys(ICON_FIELD_BY_ROW).forEach(function (row) {
+    var fieldKey = ICON_FIELD_BY_ROW[row];
+    var el = document.querySelector('.js-icon-emoji[data-icon-row="' + row + '"]');
+    if (!el) return;
+    var choice = fieldData[fieldKey];
+    if (!choice || !ICON_PRESET_EMOJI[choice]) {
+      choice = ICON_DEFAULT_BY_ROW[row];
+    }
+    el.textContent = ICON_PRESET_EMOJI[choice] || '';
+  });
+}
+
 function persistSession(obj) {
   if (!obj || !obj.detail) return;
   var s = obj.detail.session;
@@ -213,6 +318,13 @@ window.addEventListener('onWidgetLoad', function (obj) {
     currencySymbol = c;
   }
   persistSession(obj);
+  applyIconChoices();
+  refreshFromSession();
+});
+
+window.addEventListener('onSettingsUpdate', function (obj) {
+  fieldData = (obj.detail && obj.detail.fieldData) || fieldData;
+  applyIconChoices();
   refreshFromSession();
 });
 
